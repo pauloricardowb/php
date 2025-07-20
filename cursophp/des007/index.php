@@ -28,11 +28,13 @@
     <section>
         <h2>Resultado Final</h2>
         <?php
+
         $dif = $sal % $min;
         //$tot = (int)($sal/$msal)
         $quoc = intdiv($sal, $min);
 
         echo "<p>Quem recebe um salário de <strong>R$".number_format($sal, 2, ",",".")."</strong> ganha <strong>".number_format($quoc, 0, ",",".")."</strong> salários + <strong>R$".number_format($dif, 2 ,",",".")."</strong></p>";
+        
         ?>
     </section>
 </body>
