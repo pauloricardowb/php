@@ -23,4 +23,14 @@ select last_name from email_list where first_name = 'Bubba'
 select first_name, last_name from email_list where email = 'ls@objectville.net'
 select * from email_list where first_name = 'Amber' and last_name = 'McCarthy'
 
+/* delete */
+
+select from email_list where first_name = 'Anne';
+delete from email_list where first_name = 'Anne' or last_name = 'Parker';
+delete from email_list here last_name = 'Parker';
+
+delete form email_list where email = 'pr@honey-doit.com';
+
+
+
 
