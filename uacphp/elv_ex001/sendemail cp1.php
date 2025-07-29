@@ -3,24 +3,9 @@
     $subject = $_POST['subject'];
     $text = $_POST ['elvismail'];
 
-    if ((!empty($subject)) && (!empty($text))) { //teste condiconais com operadores
-        //Nós sabemos que tanto $subject e $text estão faltando
-    } 
-    else {
-        if (empty($subject) || empty($text)) {
-    // Nós sabemos que um doi dois, $subject ou $text, está faltando - vamos descobrir qual deles
-            if(empty($subject)) {
-                //$subject está vazia
-                echo 'Você esqueceu do assunto..<br>';
-            } 
-            else {
-                //$text está vazia
-                echo 'Você esqueceu do corpo da mensagem..<br>';
-            }
-        }
-        else {
-            //Tudo certo, enviar email
-
+    if (!empty($subject)) { //o ponto de exclamação inverte a lógica da função empty().
+        if (!empty($text)) {
+            
             $dbc = mysqli_connect('localhost','root','','elvis_store')
                 or die('Erro ao se conctar ao servidor MySql');
         
@@ -39,6 +24,6 @@
                 echo 'Email sento to: ' . $to . '<br>'; //Uma mensagem de confirmação é enviada para a página, com o endereço de cada cliente a quem foi enviada a mensagem.
             }
             mysqli_close($dbc);
-        }
-    }
+        } //finalizando a declaração if interna
+    } //finalizando a declaração if externa
 ?>
